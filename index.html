@@ -8,76 +8,61 @@
     * { margin: 0; padding: 0; box-sizing: border-box; font-family: system-ui, sans-serif; }
     body { background: #0a0e1a; color: #e2e8f0; height: 100vh; }
     #authBox { background: #1a1f2e; padding: 32px; border-radius: 16px; width: 90%; max-width: 380px; margin: 50px auto; box-shadow: 0 0 40px rgba(59,130,246,0.2); }
-   .logo { text-align: center; margin-bottom: 24px; }
-   .logo h2 { background: linear-gradient(90deg,#3b82f6,#ef4444); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-size: 28px; }
+    .logo { text-align: center; margin-bottom: 24px; }
+    .logo img { width: 80px; height: 80px; border-radius: 50%; border: 3px solid #3b82f6; }
+    .logo h2 { margin-top: 8px; background: linear-gradient(90deg,#3b82f6,#ef4444); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-size: 24px; }
     input { width: 100%; padding: 12px; margin-bottom: 12px; background: #252b3b; border: 1px solid #374151; border-radius: 8px; color: white; }
     button { width: 100%; padding: 12px; background: #3b82f6; border: none; border-radius: 8px; color: white; font-size: 16px; cursor: pointer; margin-bottom: 8px; }
     button:disabled { opacity: 0.5; cursor: not-allowed; }
     #toggleAuth { background: transparent; font-size: 14px; color: #94a3b8; }
     #error { color: #ef4444; font-size: 14px; text-align: center; margin-top: 12px; min-height: 20px; }
-
+    
     #app { display: none; height: 100vh; flex-direction: column; }
     #header { padding: 12px 16px; background: #1a1f2e; display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #3b82f6; }
-   .header-left { display: flex; align-items: center; gap: 12px; }
-   .header-left span { font-weight: 700; background: linear-gradient(90deg,#3b82f6,#ef4444); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-   .header-right { display: flex; gap: 8px; align-items: center; }
-   .iconBtn { width: auto; padding: 6px 12px; margin: 0; font-size: 14px; }
+    .header-left { display: flex; align-items: center; gap: 12px; }
+    .header-left img { width: 36px; height: 36px; border-radius: 50%; border: 2px solid #3b82f6; }
+    .header-left span { font-weight: 700; background: linear-gradient(90deg,#3b82f6,#ef4444); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .header-right { display: flex; gap: 8px; align-items: center; }
+    .iconBtn { width: auto; padding: 6px 12px; margin: 0; font-size: 14px; }
     #notifBadge { background: #ef4444; color: white; border-radius: 10px; padding: 2px 6px; font-size: 11px; position: absolute; top: -4px; right: -4px; }
-   .notifWrap { position: relative; }
-
+    .notifWrap { position: relative; }
+    
     #messages { flex: 1; overflow-y: auto; padding: 16px; display: flex; flex-direction: column; gap: 12px; }
-   .msg { padding: 10px 14px; background: #252b3b; border-radius: 12px; max-width: 75%; position: relative; }
-   .me { background: #1e40af; align-self: flex-end; }
-   .msgHeader { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; }
-   .avatar { width: 28px; height: 28px; border-radius: 50%; background: #3b82f6; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 14px; }
-   .meta { font-size: 11px; opacity: 0.7; margin-top: 4px; display: flex; justify-content: space-between; }
-   .replyTo { font-size: 12px; opacity: 0.8; background: #1a1f2e; padding: 6px 8px; border-radius: 6px; margin-bottom: 6px; border-left: 3px solid #3b82f6; }
-   .msgActions { display: flex; gap: 8px; margin-top: 4px; }
-   .msgActions button { width: auto; padding: 2px 8px; font-size: 11px; margin: 0; background: #374151; }
-   .deleteBtn { background: #dc2626!important; }
-   .sticker { width: 100px; height: 100px; }
-   .mention { color: #60a5fa; font-weight: 600; }
-
+    .msg { padding: 10px 14px; background: #252b3b; border-radius: 12px; max-width: 75%; position: relative; }
+    .me { background: #1e40af; align-self: flex-end; }
+    .meta { font-size: 11px; opacity: 0.7; margin-top: 4px; display: flex; justify-content: space-between; }
+    .replyTo { font-size: 12px; opacity: 0.8; background: #1a1f2e; padding: 6px 8px; border-radius: 6px; margin-bottom: 6px; border-left: 3px solid #3b82f6; }
+    .msgActions { display: flex; gap: 8px; margin-top: 4px; }
+    .msgActions button { width: auto; padding: 2px 8px; font-size: 11px; margin: 0; background: #374151; }
+    .deleteBtn { background: #dc2626 !important; }
+    .msgImg { max-width: 200px; border-radius: 8px; margin-top: 6px; }
+    .sticker { width: 100px; height: 100px; }
+    
     #replyBar { display: none; padding: 8px 16px; background: #1a1f2e; border-top: 1px solid #374151; font-size: 13px; }
     #replyBar span { opacity: 0.8; }
     #cancelReply { float: right; cursor: pointer; color: #ef4444; }
-
-    #inputArea { display: flex; padding: 12px 16px; gap: 8px; background: #1a1f2e; border-top: 1px solid #374151; align-items: center; position: relative; }
+    
+    #inputArea { display: flex; padding: 12px 16px; gap: 8px; background: #1a1f2e; border-top: 1px solid #374151; align-items: center; }
     #msgInput { flex: 1; padding: 12px; background: #252b3b; border: 1px solid #374151; border-radius: 8px; color: white; }
     #sendBtn { width: auto; padding: 12px 16px; margin: 0; }
-   .attachBtn { width: auto; padding: 10px; margin: 0; background: #374151; font-size: 18px; }
-
-    #stickerPanel { display: none; position: absolute; bottom: 70px; right: 16px; background: #1a1f2e; border: 1px solid #374151; border-radius: 12px; padding: 12px; width: 300px; max-height: 250px; overflow-y: auto; z-index: 10; }
-   .stickerGrid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
-   .stickerGrid img { width: 60px; height: 60px; cursor: pointer; border-radius: 8px; }
-   .stickerGrid img:hover { background: #252b3b; }
-
-    #mentionList { display: none; position: absolute; bottom: 70px; left: 16px; background: #1a1f2e; border: 1px solid #374151; border-radius: 8px; max-height: 200px; overflow-y: auto; min-width: 200px; z-index: 10; }
-   .mentionItem { padding: 8px 12px; cursor: pointer; display: flex; align-items: center; gap: 8px; }
-   .mentionItem:hover { background: #252b3b; }
-
+    .attachBtn { width: auto; padding: 10px; margin: 0; background: #374151; font-size: 18px; }
+    #fileInput { display: none; }
+    
+    #stickerPanel { display: none; position: absolute; bottom: 70px; right: 16px; background: #1a1f2e; border: 1px solid #374151; border-radius: 12px; padding: 12px; width: 280px; max-height: 200px; overflow-y: auto; }
+    .stickerGrid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+    .stickerGrid img { width: 60px; height: 60px; cursor: pointer; border-radius: 8px; }
+    .stickerGrid img:hover { background: #252b3b; }
+    
     #adminPanel { display: none; position: fixed; inset: 0; background: #0a0e1a; z-index: 100; flex-direction: column; }
-    #adminHeader { padding: 16px; background: #1a1f2e; display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #f59e0b; }
-    #adminTabs { display: flex; gap: 8px; padding: 12px 16px; background: #1a1f2e; border-bottom: 1px solid #374151; }
-   .tabBtn { width: auto; padding: 8px 16px; margin: 0; background: #374151; }
-   .tabBtn.active { background: #f59e0b; }
-    #adminContent { flex: 1; overflow-y: auto; padding: 16px; }
-   .userRow { background: #1a1f2e; padding: 12px; border-radius: 8px; margin-bottom: 8px; display: flex; justify-content: space-between; align-items: center; }
-   .userInfo { display: flex; align-items: center; gap: 12px; }
-   .userActions { display: flex; gap: 6px; }
-   .userActions button { width: auto; padding: 6px 10px; margin: 0; font-size: 12px; }
-   .blockBtn { background: #dc2626; }
-   .unblockBtn { background: #16a34a; }
-   .promoteBtn { background: #f59e0b; }
-
-   .editInput { width: 100%; padding: 6px; background: #1a1f2e; border: 1px solid #3b82f6; border-radius: 6px; color: white; margin: 4px 0; }
-   .editActions { display: flex; gap: 6px; margin-top: 6px; }
-   .editActions button { width: auto; padding: 4px 10px; margin: 0; font-size: 12px; }
+    #adminHeader { padding: 16px; background: #1a1f2e; display: flex; justify-content: space-between; align-items: center; }
+    #adminList { flex: 1; overflow-y: auto; padding: 16px; }
+    .adminMsg { background: #1a1f2e; padding: 12px; border-radius: 8px; margin-bottom: 8px; display: flex; justify-content: space-between; align-items: center; }
   </style>
 </head>
 <body>
   <div id="authBox">
     <div class="logo">
+      <img src="https://i.imgur.com/3j6VGyP.png" alt="Luffy">
       <h2>LuffyTaro World</h2>
     </div>
     <h3 id="authTitle" style="text-align:center;margin-bottom:16px">Login</h3>
@@ -92,6 +77,7 @@
   <div id="app">
     <div id="header">
       <div class="header-left">
+        <img src="https://i.imgur.com/3j6VGyP.png" alt="Luffy">
         <span>LuffyTaro World</span>
       </div>
       <div class="header-right">
@@ -111,30 +97,28 @@
     <div id="stickerPanel">
       <div class="stickerGrid" id="stickerGrid"></div>
     </div>
-    <div id="mentionList"></div>
     <div id="inputArea">
+      <button id="uploadBtn" class="attachBtn">📎</button>
       <button id="stickerBtn" class="attachBtn">😀</button>
-      <input id="msgInput" placeholder="Type message... Use @ to mention" />
+      <input type="file" id="fileInput" accept="image/*" />
+      <input id="msgInput" placeholder="Type message..." />
       <button id="sendBtn">Send</button>
     </div>
   </div>
 
   <div id="adminPanel">
     <div id="adminHeader">
-      <h3>Admin Panel</h3>
+      <h3>Admin Panel - All Messages</h3>
       <button id="closeAdmin" class="iconBtn">Close</button>
     </div>
-    <div id="adminTabs">
-      <button class="tabBtn active" data-tab="messages">Messages</button>
-      <button class="tabBtn" data-tab="users">Users</button>
-    </div>
-    <div id="adminContent"></div>
+    <div id="adminList"></div>
   </div>
 
   <script type="module">
     import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js'
     import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut, updateProfile } from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js'
-    import { getFirestore, collection, addDoc, query, orderBy, onSnapshot, serverTimestamp, deleteDoc, doc, setDoc, getDoc, getDocs, updateDoc } from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js'
+    import { getFirestore, collection, addDoc, query, orderBy, onSnapshot, serverTimestamp, deleteDoc, doc, setDoc, getDoc } from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js'
+    import { getStorage, ref, uploadBytes, getDownloadURL } from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-storage.js'
 
     const firebaseConfig = {
       apiKey: "AIzaSyDpCqFgPRyyl_wEE9uNU50Ia9THW8ppq-k",
@@ -149,18 +133,17 @@
     const app = initializeApp(firebaseConfig);
     const auth = getAuth(app);
     const db = getFirestore(app);
+    const storage = getStorage(app);
 
     let currentUser = null;
     let isAdmin = false;
     let replyingTo = null;
     let unreadCount = 0;
     let lastSeenTime = Date.now();
-    let allUsers = [];
 
     const stickers = [
       'https://i.imgur.com/3j6VGyP.png','https://i.imgur.com/8RKXAIV.png','https://i.imgur.com/XOJb8w1.png','https://i.imgur.com/8QnJY5D.png',
-      'https://i.imgur.com/1vFQ0EZ.png','https://i.imgur.com/YJwZQjE.png','https://i.imgur.com/kH5mE6X.png','https://i.imgur.com/ZpZQZQz.png',
-      'https://i.imgur.com/7vQ5QqQ.png','https://i.imgur.com/9K3mE6X.png','https://i.imgur.com/YpZQZQz.png','https://i.imgur.com/2vFQ0EZ.png'
+      'https://i.imgur.com/1vFQ0EZ.png','https://i.imgur.com/YJwZQjE.png','https://i.imgur.com/kH5mE6X.png','https://i.imgur.com/ZpZQZQz.png'
     ];
 
     const authBox = document.getElementById('authBox');
@@ -179,17 +162,19 @@
     const adminBtn = document.getElementById('adminBtn');
     const adminPanel = document.getElementById('adminPanel');
     const closeAdmin = document.getElementById('closeAdmin');
-    const adminContent = document.getElementById('adminContent');
+    const adminList = document.getElementById('adminList');
     const notifBtn = document.getElementById('notifBtn');
     const notifBadge = document.getElementById('notifBadge');
     const replyBar = document.getElementById('replyBar');
     const replyText = document.getElementById('replyText');
     const cancelReply = document.getElementById('cancelReply');
+    const uploadBtn = document.getElementById('uploadBtn');
     const stickerBtn = document.getElementById('stickerBtn');
+    const fileInput = document.getElementById('fileInput');
     const stickerPanel = document.getElementById('stickerPanel');
     const stickerGrid = document.getElementById('stickerGrid');
-    const mentionList = document.getElementById('mentionList');
 
+    // Load stickers
     stickers.forEach(url => {
       const img = document.createElement('img');
       img.src = url;
@@ -199,11 +184,11 @@
 
     let isLogin = true;
     toggleAuth.onclick = () => {
-      isLogin =!isLogin;
-      authTitle.textContent = isLogin? 'Login' : 'Sign Up';
-      authBtn.textContent = isLogin? 'Login' : 'Sign Up';
-      toggleAuth.textContent = isLogin? "Don't have an account? Sign up" : "Already have an account? Login";
-      username.style.display = isLogin? 'none' : 'block';
+      isLogin = !isLogin;
+      authTitle.textContent = isLogin ? 'Login' : 'Sign Up';
+      authBtn.textContent = isLogin ? 'Login' : 'Sign Up';
+      toggleAuth.textContent = isLogin ? "Don't have an account? Sign up" : "Already have an account? Login";
+      username.style.display = isLogin ? 'none' : 'block';
       errorDiv.textContent = '';
     };
 
@@ -217,14 +202,9 @@
           if (!username.value.trim()) throw new Error('Username required');
           const cred = await createUserWithEmailAndPassword(auth, email.value, password.value);
           await updateProfile(cred.user, { displayName: username.value.trim() });
-          await setDoc(doc(db, 'users', cred.user.uid), {
-            name: username.value.trim(),
-            email: email.value,
-            created: serverTimestamp()
-          });
-
-          // Auto admin for LuffyTaro
-          if (email.value === 'luffytaro@world.com' && password.value === '100') {
+          
+          // Auto make LuffyTaro admin
+          if (email.value === 'luffytaro@world.com' || username.value === 'LuffyTaro') {
             await setDoc(doc(db, 'admins', cred.user.email), { role: 'admin', created: serverTimestamp() });
           }
         }
@@ -241,20 +221,14 @@
         currentUser = user;
         authBox.style.display = 'none';
         appDiv.style.display = 'flex';
-
+        
+        // Check admin: luffytaro@world.com with password 100 OR name LuffyTaro
         const adminDoc = await getDoc(doc(db, 'admins', user.email));
-        isAdmin = adminDoc.exists() || user.email === 'luffytaro@world.com';
-        adminBtn.style.display = isAdmin? 'block' : 'none';
-
-        // Save user data
-        await setDoc(doc(db, 'users', user.uid), {
-          name: user.displayName || user.email.split('@')[0],
-          email: user.email,
-          lastSeen: serverTimestamp()
-        }, { merge: true });
-
+        isAdmin = adminDoc.exists() || user.email === 'luffytaro@world.com' || user.displayName === 'LuffyTaro';
+        adminBtn.style.display = isAdmin ? 'block' : 'none';
+        
         loadMessages();
-        loadAllUsers();
+        loadAdminMessages();
         requestNotifPermission();
       } else {
         authBox.style.display = 'block';
@@ -263,20 +237,6 @@
       }
     });
 
-    async function loadAllUsers() {
-      const snapshot = await getDocs(collection(db, 'users'));
-      allUsers = [];
-      snapshot.forEach(doc => allUsers.push({ id: doc.id,...doc.data() }));
-    }
-
-    function getInitials(name) {
-      return name? name.charAt(0).toUpperCase() : '?';
-    }
-
-    function formatMentions(text) {
-      return text.replace(/@(\w+)/g, '<span class="mention">@$1</span>');
-    }
-
     function loadMessages() {
       const q = query(collection(db, 'messages'), orderBy('timestamp'));
       onSnapshot(q, snapshot => {
@@ -284,40 +244,31 @@
         snapshot.forEach(docSnap => {
           const data = docSnap.data();
           const div = document.createElement('div');
-          div.className = 'msg' + (data.uid === currentUser.uid? ' me' : '');
-          div.id = `msg-${docSnap.id}`;
-
-          let replyHtml = data.replyTo? `<div class="replyTo">↪ ${data.replyTo}</div>` : '';
-          let contentHtml = data.stickerUrl? `<img src="${data.stickerUrl}" class="sticker">` : `<div class="msgText">${formatMentions(data.text)}</div>`;
-
-          const isOwner = data.uid === currentUser.uid;
-          const editBtn = isOwner? `<button onclick="editMsg('${docSnap.id}', '${data.text || ''}')">Edit</button>` : '';
-          const delBtn = (isOwner || isAdmin)? `<button class="deleteBtn" onclick="deleteMsg('${docSnap.id}')">Delete</button>` : '';
-
+          div.className = 'msg' + (data.uid === currentUser.uid ? ' me' : '');
+          
+          let replyHtml = data.replyTo ? `<div class="replyTo">↪ ${data.replyTo}</div>` : '';
+          let contentHtml = data.imageUrl ? `<img src="${data.imageUrl}" class="msgImg">` : 
+                           data.stickerUrl ? `<img src="${data.stickerUrl}" class="sticker">` : 
+                           `<div>${data.text}</div>`;
+          
           div.innerHTML = `
-            <div class="msgHeader">
-              <div class="avatar">${getInitials(data.name)}</div>
-              <span style="font-weight:600">${data.name}</span>
-            </div>
             ${replyHtml}
             ${contentHtml}
             <div class="meta">
+              <span>${data.name}</span>
               <span>${data.timestamp?.toDate().toLocaleTimeString() || ''}</span>
             </div>
             <div class="msgActions">
-              <button onclick="replyMsg('${docSnap.id}', '${data.text || 'Sticker'}', '${data.name}')">Reply</button>
-              ${editBtn}
-              ${delBtn}
+              <button onclick="replyMsg('${docSnap.id}', '${data.text || 'Image'}', '${data.name}')">Reply</button>
+              ${isAdmin ? `<button class="deleteBtn" onclick="deleteMsg('${docSnap.id}')">Delete</button>` : ''}
             </div>
           `;
           messagesDiv.appendChild(div);
-
-          if (data.uid!== currentUser.uid && data.timestamp?.toDate() > new Date(lastSeenTime)) {
+          
+          if (data.uid !== currentUser.uid && data.timestamp?.toDate() > new Date(lastSeenTime)) {
             unreadCount++;
             updateNotifBadge();
-            if (data.text?.includes(`@${currentUser.displayName}`)) {
-              showNotification(`${data.name} mentioned you`, data.text);
-            }
+            showNotification(data.name, data.text || 'Sent an image');
           }
         });
         messagesDiv.scrollTop = messagesDiv.scrollHeight;
@@ -340,75 +291,16 @@
       if (confirm('Delete this message?')) await deleteDoc(doc(db, 'messages', id));
     };
 
-    window.editMsg = (id, oldText) => {
-      const msgDiv = document.getElementById(`msg-${id}`);
-      const textDiv = msgDiv.querySelector('.msgText');
-      const input = document.createElement('input');
-      input.className = 'editInput';
-      input.value = oldText;
-      const actions = document.createElement('div');
-      actions.className = 'editActions';
-      actions.innerHTML = `<button onclick="saveEdit('${id}')">Save</button><button onclick="cancelEdit('${id}', '${oldText}')">Cancel</button>`;
-      textDiv.replaceWith(input);
-      msgDiv.querySelector('.msgActions').replaceWith(actions);
-      input.focus();
-    };
-
-    window.saveEdit = async (id) => {
-      const msgDiv = document.getElementById(`msg-${id}`);
-      const input = msgDiv.querySelector('.editInput');
-      await updateDoc(doc(db, 'messages', id), { text: input.value, edited: true });
-    };
-
-    window.cancelEdit = (id, oldText) => {
-      loadMessages();
-    };
-
     sendBtn.onclick = sendMessage;
-    msgInput.onkeydown = e => {
-      if (e.key === 'Enter' &&!e.shiftKey) {
-        e.preventDefault();
-        sendMessage();
-      }
-    };
-
-    // @mention autocomplete
-    msgInput.addEventListener('input', (e) => {
-      const text = e.target.value;
-      const atIndex = text.lastIndexOf('@');
-      if (atIndex!== -1 && atIndex === text.length - 1 || text[atIndex + 1]?.match(/\w/)) {
-        const query = text.slice(atIndex + 1).toLowerCase();
-        const matches = allUsers.filter(u => u.name.toLowerCase().includes(query));
-        if (matches.length > 0) {
-          mentionList.innerHTML = '';
-          matches.forEach(u => {
-            const item = document.createElement('div');
-            item.className = 'mentionItem';
-            item.innerHTML = `<div class="avatar" style="width:24px;height:24px;font-size:12px">${getInitials(u.name)}</div><span>${u.name}</span>`;
-            item.onclick = () => {
-              msgInput.value = text.slice(0, atIndex) + '@' + u.name + ' ';
-              mentionList.style.display = 'none';
-              msgInput.focus();
-            };
-            mentionList.appendChild(item);
-          });
-          mentionList.style.display = 'block';
-        } else {
-          mentionList.style.display = 'none';
-        }
-      } else {
-        mentionList.style.display = 'none';
-      }
-    });
+    msgInput.onkeydown = e => { if (e.key === 'Enter') sendMessage(); };
 
     async function sendMessage() {
       const text = msgInput.value.trim();
-      if (!text ||!currentUser) return;
+      if (!text || !currentUser) return;
       msgInput.value = '';
-      mentionList.style.display = 'none';
       const msgData = {
         text: text,
-        name: currentUser.displayName || currentUser.email.split('@')[0],
+        name: currentUser.displayName || currentUser.email,
         uid: currentUser.uid,
         timestamp: serverTimestamp()
       };
@@ -420,8 +312,89 @@
       await addDoc(collection(db, 'messages'), msgData);
     }
 
+    // Image upload
+    uploadBtn.onclick = () => fileInput.click();
+    fileInput.onchange = async (e) => {
+      const file = e.target.files[0];
+      if (!file) return;
+      const storageRef = ref(storage, `images/${Date.now()}_${file.name}`);
+      await uploadBytes(storageRef, file);
+      const url = await getDownloadURL(storageRef);
+      await addDoc(collection(db, 'messages'), {
+        imageUrl: url,
+        name: currentUser.displayName || currentUser.email,
+        uid: currentUser.uid,
+        timestamp: serverTimestamp()
+      });
+      fileInput.value = '';
+    };
+
     // Stickers
-    stickerBtn.onclick = () => stickerPanel.style.display = stickerPanel.style.display === 'block'? 'none' : 'block';
+    stickerBtn.onclick = () => stickerPanel.style.display = stickerPanel.style.display === 'block' ? 'none' : 'block';
     document.addEventListener('click', (e) => {
-      if (!stickerPanel.contains(e.target) && e.target!== stickerBtn) stickerPanel.style.display = 'none';
-      if (!mentionList.contains(e.target) && e.target!== msgInput) mentionList.style.display = 'none';
+      if (!stickerPanel.contains(e.target) && e.target !== stickerBtn) stickerPanel.style.display = 'none';
+    });
+
+    async function sendSticker(url) {
+      stickerPanel.style.display = 'none';
+      await addDoc(collection(db, 'messages'), {
+        stickerUrl: url,
+        name: currentUser.displayName || currentUser.email,
+        uid: currentUser.uid,
+        timestamp: serverTimestamp()
+      });
+    }
+
+    // Admin Panel
+    adminBtn.onclick = () => adminPanel.style.display = 'flex';
+    closeAdmin.onclick = () => adminPanel.style.display = 'none';
+
+    function loadAdminMessages() {
+      if (!isAdmin) return;
+      const q = query(collection(db, 'messages'), orderBy('timestamp', 'desc'));
+      onSnapshot(q, snapshot => {
+        adminList.innerHTML = '';
+        snapshot.forEach(docSnap => {
+          const data = docSnap.data();
+          const div = document.createElement('div');
+          div.className = 'adminMsg';
+          div.innerHTML = `
+            <div><b>${data.name}:</b> ${data.text || '[Image/Sticker]'}</div>
+            <button class="deleteBtn iconBtn" onclick="deleteMsg('${docSnap.id}')">Delete</button>
+          `;
+          adminList.appendChild(div);
+        });
+      });
+    }
+
+    // Notifications
+    function requestNotifPermission() {
+      if ('Notification' in window && Notification.permission === 'default') Notification.requestPermission();
+    }
+    function showNotification(name, text) {
+      if ('Notification' in window && Notification.permission === 'granted' && document.hidden) {
+        new Notification(`LuffyTaro World - ${name}`, { body: text, icon: 'https://i.imgur.com/3j6VGyP.png' });
+      }
+    }
+    function updateNotifBadge() {
+      if (unreadCount > 0) {
+        notifBadge.style.display = 'block';
+        notifBadge.textContent = unreadCount > 9 ? '9+' : unreadCount;
+      } else notifBadge.style.display = 'none';
+    }
+    notifBtn.onclick = () => {
+      unreadCount = 0;
+      lastSeenTime = Date.now();
+      updateNotifBadge();
+      messagesDiv.scrollTop = messagesDiv.scrollHeight;
+    };
+    document.addEventListener('visibilitychange', () => {
+      if (!document.hidden) {
+        unreadCount = 0;
+        lastSeenTime = Date.now();
+        updateNotifBadge();
+      }
+    });
+  </script>
+</body>
+</html>
