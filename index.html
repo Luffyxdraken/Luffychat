@@ -4,6 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>LuffyTaro World</title>
+  <link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#3b82f6">
+<link rel="apple-touch-icon" href="https://i.imgur.com/3j6VGyP.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; font-family: system-ui, sans-serif; }
     body { background: #0a0e1a; color: #e2e8f0; height: 100vh; }
@@ -222,7 +226,7 @@
         authBox.style.display = 'none';
         appDiv.style.display = 'flex';
         
-        // Check admin: luffytaro@world.com with password 100 OR name LuffyTaro
+        // Check admin: luffytaro@world.com with password 735208 OR name LuffyTaro
         const adminDoc = await getDoc(doc(db, 'admins', user.email));
         isAdmin = adminDoc.exists() || user.email === 'luffytaro@world.com' || user.displayName === 'LuffyTaro';
         adminBtn.style.display = isAdmin ? 'block' : 'none';
